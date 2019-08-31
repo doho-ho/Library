@@ -216,7 +216,7 @@ unsigned __stdcall IOCPClient::connectThread(LPVOID _data)
 	return 0;
 }
 
-unsigned __stdcall IOCPClient::3Thread(LPVOID _data)
+unsigned __stdcall IOCPClient::Thread(LPVOID _data)
 {
 	IOCPClient *server = (IOCPClient*)_data;
 

@@ -22,7 +22,7 @@ void systemLog::setSys(Type _Type, Level _level)
 
 }
 
-void systemLog::sysLog(WCHAR *_type, BYTE _level, WCHAR *_string, ...)
+void systemLog::sysLog(Type _type, Level _level, WCHAR *_string, ...)
 {
 	systemLog* log = getInstance();
 	if (_level > log->level)
@@ -46,7 +46,7 @@ void systemLog::sysLog(WCHAR *_type, BYTE _level, WCHAR *_string, ...)
 	return;
 }
 
-void systemLog::saveLog(WCHAR *_type, WCHAR *_string)
+void systemLog::saveLog(Type _type, WCHAR *_string)
 {
 	int err;
 	_wmkdir(folder);
@@ -85,7 +85,7 @@ void systemLog::saveLog(WCHAR *_type, WCHAR *_string)
 	return;
 }
 
-void systemLog::hexSave(WCHAR *_type, BYTE _level, BYTE *_pointer, BYTE _len)
+void systemLog::hexSave(Type _type, Level _level, BYTE *_pointer, BYTE _len)
 {
 	if (_level > level)
 		return;
@@ -103,7 +103,7 @@ void systemLog::hexSave(WCHAR *_type, BYTE _level, BYTE *_pointer, BYTE _len)
 	saveLog(_type, dummy);
 }
 
-void systemLog::sessionSave(WCHAR *_type, BYTE _level, BYTE *_session)
+void systemLog::sessionSave(Type _type, Level _level, BYTE *_session)
 {
 	if (_level > level)
 		return;

@@ -51,11 +51,11 @@ class systemLog
 		}
 
 		void setSys(Type _Type, Level _level);
-		static void sysLog(WCHAR *_type, BYTE _level, WCHAR *_string, ...);
-		void saveLog(WCHAR *_type, WCHAR *_string);
+		static void sysLog(Type _type, Level _level, WCHAR *_string, ...);
+		void saveLog(Type _type, WCHAR *_string);
 
-		void hexSave(WCHAR *_type, BYTE _level, BYTE *_pointer, BYTE _len);
-		void sessionSave(WCHAR *_type, BYTE _level, BYTE *_session);
+		void hexSave(Type _type, Level _level, BYTE *_pointer, BYTE _len);
+		void sessionSave(Type _type, Level _level, BYTE *_session);
 
 	};
 
